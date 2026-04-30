@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تفاصيل الحجز</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet1.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">✈️ SkyDeal</div>
+        <div class="nav-links"><a href="/">الرئيسية</a></div>
+    </nav>
+
+    <section class="booking-section">
+        <h2>🎫 تفاصيل الحجز</h2>
+
+        <form action="/confirm" method="POST">
+
+            <!-- بيانات المسافر -->
+            <div class="booking-card">
+                <h3>👤 بيانات المسافر</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>الاسم الأول</label>
+                        <input type="text" name="first_name" placeholder="الاسم الأول" required>
+                    </div>
+                    <div class="form-group">
+                        <label>اسم العائلة</label>
+                        <input type="text" name="last_name" placeholder="اسم العائلة" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>رقم جواز السفر</label>
+                        <input type="text" name="passport" placeholder="A12345678" required>
+                    </div>
+                    <div class="form-group">
+                        <label>الجنسية</label>
+                        <input type="text" name="nationality" placeholder="سعودي" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>تاريخ الميلاد</label>
+                        <input type="date" name="dob" required>
+                    </div>
+                    <div class="form-group">
+                        <label>الجنس</label>
+                        <select name="gender">
+                            <option>ذكر</option>
+                            <option>أنثى</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- اختيار المقعد -->
+            <div class="booking-card">
+                <h3>💺 تفضيل المقعد</h3>
+                <div class="seat-options">
+                    <label class="seat-option">
+                        <input type="radio" name="seat" value="window">
+                        <div class="seat-box">🪟<br>بجوار النافذة</div>
+                    </label>
+                    <label class="seat-option">
+                        <input type="radio" name="seat" value="aisle" checked>
+                        <div class="seat-box">🚶<br>بجوار الممر</div>
+                    </label>
+                    <label class="seat-option">
+                        <input type="radio" name="seat" value="middle">
+                        <div class="seat-box">🪑<br>المقعد الأوسط</div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- الأمتعة -->
+            <div class="booking-card">
+                <h3>🧳 الأمتعة</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>عدد الحقائب</label>
+                        <select name="bags">
+                            <option>بدون حقيبة</option>
+                            <option>حقيبة واحدة (23 كغ)</option>
+                            <option>حقيبتين (23 كغ)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>حقيبة يد</label>
+                        <select name="handbag">
+                            <option>حقيبة يد صغيرة</option>
+                            <option>حقيبة يد كبيرة</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الوجبة -->
+            <div class="booking-card">
+                <h3>🍽️ الوجبة المفضلة</h3>
+                <div class="meal-options">
+                    <label class="meal-option">
+                        <input type="radio" name="meal" value="standard" checked>
+                        <div class="meal-box">🍱<br>وجبة عادية</div>
+                    </label>
+                    <label class="meal-option">
+                        <input type="radio" name="meal" value="vegetarian">
+                        <div class="meal-box">🥗<br>نباتية</div>
+                    </label>
+                    <label class="meal-option">
+                        <input type="radio" name="meal" value="halal">
+                        <div class="meal-box">☪️<br>حلال</div>
+                    </label>
+                    <label class="meal-option">
+                        <input type="radio" name="meal" value="none">
+                        <div class="meal-box">❌<br>بدون وجبة</div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- زر التأكيد -->
+            <button type="submit" class="btn-search">✅ تأكيد الحجز</button>
+
+        </form>
+    </section>
+    <footer>
+        <p>© 2026 SkyDeal — جميع الحقوق محفوظة</p>
+    </footer>
+</body>
+</html>
