@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>حجوزاتي</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet1.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">✈️ SkyDeal</div>
+        <div class="nav-links"><a href="/">الرئيسية</a></div>
+        <div class="nav-btns">
+            <span class="user-name">👤 {{ session['name'] }}</span>
+            <a href="/logout"><button class="btn-login">خروج</button></a>
+        </div>
+    </nav>
+
+    <section class="booking-section">
+        <h2>🎫 حجوزاتي</h2>
+
+        {% if bookings %}
+        <div class="offers-grid">
+            {% for b in bookings %}
+            <div class="offer-card">
+                <div class="route">{{ b.from }} ✈️ {{ b.to }}</div>
+                <div class="airline">👤 {{ b.name }}</div>
+                <div class="airline">💺 {{ b.seat }}</div>
+                <div class="airline">🍽️ {{ b.meal }}</div>
+                <div class="badge" style="background:#059669">مؤكد</div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="booking-card" style="text-align:center;padding:40px">
+            <p style="color:#64748b;font-size:1.1rem">ما عندك حجوزات بعد! 😊</p>
+            <a href="/"><button class="btn-search" style="margin-top:16px;width:auto;padding:12px 32px">ابحث عن رحلة</button></a>
+        </div>
+        {% endif %}
+    </section>
+
+    <footer>
+        <p>© 2025 SkyDeal — جميع الحقوق محفوظة</p>
+    </footer>
+</body>
+</html>
