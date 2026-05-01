@@ -266,6 +266,7 @@ footer {
     color: #64748b;
     font-size: 0.85rem;
 }
+
 .auth-container {
     display: flex;
     justify-content: center;
@@ -369,4 +370,10 @@ footer {
 
 .seat-box:hover, .meal-box:hover {
     border-color: #93c5fd;
+}
+.user-name {
+    color: #60a5fa;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-left: 16px;
 }
