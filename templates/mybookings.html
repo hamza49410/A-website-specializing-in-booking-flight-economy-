@@ -22,11 +22,12 @@
         <div class="offers-grid">
             {% for b in bookings %}
             <div class="offer-card">
-                <div class="route">{{ b.from }} ✈️ {{ b.to }}</div>
-                <div class="airline">👤 {{ b.name }}</div>
-                <div class="airline">💺 {{ b.seat }}</div>
-                <div class="airline">🍽️ {{ b.meal }}</div>
-                <div class="badge" style="background:#059669">مؤكد</div>
+                <div class="route">{{ b.from_city }} ✈️ {{ b.to_city }}</div>
+                <div class="airline">👤 {{ b.first_name }} {{ b.last_name }}</div>
+                <div class="airline">🏢 {{ b.airline }}</div>
+                <div class="airline">💺 {{ b.seat_preference }}</div>
+                <div class="airline">🍽 {{ b.meal_preference }}</div>
+                <div class="badge" style="background:#059669">✅ مؤكد</div>
             </div>
             {% endfor %}
         </div>
