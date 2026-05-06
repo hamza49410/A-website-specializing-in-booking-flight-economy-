@@ -67,52 +67,24 @@
         </div>
     </section>
 
-    <section class="offers">
-        <h2>🔥 أحدث العروض</h2>
-        <div class="offers-grid">
-            <div class="offer-card">
-                <div class="badge">-40%</div>
-                <div class="route">الرياض ✈️ دبي</div>
-                <div class="airline">طيران ناس</div>
-                <div class="prices">
-                    <span class="old">800 ريال</span>
-                    <span class="new">480 ريال</span>
-                </div>
-                <div class="expires">⏱️ ينتهي خلال: 2 يوم</div>
-                <a href="/booking">
-                    <button class="btn-book">احجز الآن</button>
-                </a>
+    <div class="offers-grid">
+        {% for f in flights %}
+        <div class="offer-card">
+            <div class="badge">-{{ f.discount }}%</div>
+            <div class="route">{{ f.from }} ✈️ {{ f.to }}</div>
+            <div class="airline">{{ f.airline }}</div>
+            <div class="prices">
+                <span class="old">{{ f.old_price }} ريال</span>
+                <span class="new">{{ f.new_price }} ريال</span>
             </div>
-
-            <div class="offer-card">
-                <div class="badge">-35%</div>
-                <div class="route">جدة ✈️ القاهرة</div>
-                <div class="airline">فلاي ناس</div>
-                <div class="prices">
-                    <span class="old">1200 ريال</span>
-                    <span class="new">780 ريال</span>
-                </div>
-                <div class="expires">⏱️ ينتهي خلال: 5 أيام</div>
-                <a href="/booking">
-                    <button class="btn-book">احجز الآن</button>
-                </a>
-            </div>
-            <div class="offer-card">
-                <div class="badge">-50%</div>
-                <div class="route">الدمام ✈️ إسطنبول</div>
-                <div class="airline">طيران العربية</div>
-                <div class="prices">
-                    <span class="old">2000 ريال</span>
-                    <span class="new">1000 ريال</span>
-                </div>
-                <div class="expires">⏱️ ينتهي خلال: 1 يوم</div>
-                <a href="/booking">
-                    <button class="btn-book">احجز الآن</button>
-                </a>
-            </div>
+            <div class="expires">⏱ ينتهي خلال: {{ f.expires }}</div>
+            <a href="/booking">
+                <button class="btn-book">احجز الآن</button>
+            </a>
         </div>
+        {% endfor %}
+    </div>
     </section>
-
 
     <footer>
         <p>© 2026 SkyDeal — جميع الحقوق محفوظة</p>
