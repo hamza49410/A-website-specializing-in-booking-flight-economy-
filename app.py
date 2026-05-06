@@ -4,11 +4,10 @@ from flask_mysqldb import MySQL
 app = Flask(__name__)
 app.secret_key = 'skydeal123'
 
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'flight_booking'
-app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+app.config['MYSQL_HOST'] = 'sql7.freesqldatabase.com'
+app.config['MYSQL_USER'] = 'sql7825648'
+app.config['MYSQL_PASSWORD'] = 'كلمة السر من الموقع'
+app.config['MYSQL_DB'] = 'sql7825648'
 
 mysql = MySQL(app)
 
