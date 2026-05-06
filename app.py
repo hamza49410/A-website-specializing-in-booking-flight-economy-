@@ -6,7 +6,7 @@ app.secret_key = 'skydeal123'
 
 app.config['MYSQL_HOST'] = 'sql7.freesqldatabase.com'
 app.config['MYSQL_USER'] = 'sql7825648'
-app.config['MYSQL_PASSWORD'] = 'كلمة السر من الموقع'
+app.config['MYSQL_PASSWORD'] = 'UKW5AbM5VB'
 app.config['MYSQL_DB'] = 'sql7825648'
 
 mysql = MySQL(app)
