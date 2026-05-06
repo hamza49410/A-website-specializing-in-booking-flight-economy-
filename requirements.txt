@@ -1,3 +1,4 @@
 flask
 gunicorn
-flask_mysqldb
+Flask-MySQLdb
+mysqlclient
